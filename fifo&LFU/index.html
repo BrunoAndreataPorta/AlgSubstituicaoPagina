@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>TrabalhoSO</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <form>
+    <label for="referencia">Referência:</label><br>
+    <input type="text" id="referencia" name="referencia"><br>
+    <label for="tamanho">Tamanho da Memória:</label><br>
+    <input type="number" id="tamanho" name="tamanho" min="1" value="5"><br>
+
+    <div class="radio-group">
+      <label for="algoritmo">Escolha o algoritmo:</label><br>
+      <label for="fifo">FIFO <input type="radio" id="fifo" name="algoritmo" value="fifo" checked></label><br>
+      <label for="outro">LFU <input type="radio" id="lfu" name="algoritmo" value="lfu"></label><br>
+    </div>
+
+    <button type="button" onclick="calcular()">Calcular</button>
+  </form>
+  <div id="tabelaMemoriaContainer">
+    <table id="tabelaMemoria" border="1">
+      <thead>
+        <tr id="referencias"></tr>
+      </thead>
+      <tbody id="memoriaCorpo"></tbody>
+    </table>
+  </div>
+  <div id="pageFaultContainer">
+    <p>Page fault é: <span id='pageFault'></span></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
